@@ -23,8 +23,8 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    { 
+        return response()->view('comics.create', []);
     }
 
     /**

@@ -24,7 +24,8 @@ Route::controller(ComicController::class)->group(function () {
     
     Route::get('/comics', 'index');
     
-    Route::get('/comics/{id}', 'show');
-
     Route::post('/comics', 'store');
+
+    Route::get('/comics/create', 'create');
+
 });
