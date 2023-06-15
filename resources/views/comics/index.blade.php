@@ -14,7 +14,13 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ $row->title }}</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="{{route('comics.show', ['comic' => $row->id])}}" class="btn btn-primary">Go somewhere</a>
+                  <a href="{{route('comics.show', ['comic' => $row->id])}}" class="btn btn-primary">SHOW</a>
+                  <form action="{{route('comics.destroy', ['comic' => $row->id])}}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button class="btn btn-danger" type="submit">DESTROY</button>
+                  </form>
+                  
                 </div>
               </div>
 
