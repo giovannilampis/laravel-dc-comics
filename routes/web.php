@@ -22,7 +22,7 @@ use App\Http\Controllers\ComicController;
  
 Route::controller(ComicController::class)->group(function () {
     
-    Route::get('/comics', 'index');
+    Route::get('/comics', 'index')->name('comics.index');
     
     Route::post('/comics', 'store')->name('comics.store');
 
