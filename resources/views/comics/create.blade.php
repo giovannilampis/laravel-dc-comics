@@ -29,7 +29,7 @@
         <input name="series" type="text" class="form-control">
     </div>
     <div class="mb-3">
-        <label class="form-label">sale_date</label>
+        <label class="form-label">Sale Date</label>
         <input name="sale_date" type="text" class="form-control">
     </div>
     <div class="mb-3">

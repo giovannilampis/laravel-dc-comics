@@ -35,7 +35,10 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        
+        Comic::create($request);
+        return response()->redirectTo('/comics');                   
     }
 
     /**
