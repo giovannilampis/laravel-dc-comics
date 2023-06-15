@@ -32,5 +32,8 @@ Route::controller(ComicController::class)->group(function () {
 
     Route::get('/comics/{comic}/edit', 'edit')->name('comics.edit');
 
+    Route::put('/comics/{comic}/update', 'update')->name('comics.update');
+
+
 
 });
