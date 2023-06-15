@@ -30,4 +30,7 @@ Route::controller(ComicController::class)->group(function () {
 
     Route::get('/comics/{comic}', 'show')->name('comics.show');
 
+    Route::get('/comics/{comic}/edit', 'edit')->name('comics.edit');
+
+
 });
