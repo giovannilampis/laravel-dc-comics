@@ -58,7 +58,12 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+        $row = $comic;
+
+        return response()->view('comics.show', ['row' => $row]);
+
+
+        // dd($comic);
     }
 
     /**

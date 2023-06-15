@@ -26,6 +26,8 @@ Route::controller(ComicController::class)->group(function () {
     
     Route::post('/comics', 'store')->name('comics.store');
 
-    Route::get('/comics/create', 'create');
+    Route::get('/comics/create', 'create')->name('comics.create');
+
+    Route::get('/comics/{comic}', 'show')->name('comics.show');
 
 });
