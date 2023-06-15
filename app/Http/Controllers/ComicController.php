@@ -88,7 +88,9 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $comic->update($request->all());
+
+        return redirect()->route('comics.show', ['comic' => $comic->id]);
     }
 
     /**

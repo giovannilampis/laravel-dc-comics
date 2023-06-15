@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
-<form action="{{ route('comics.update', ['comic'=>$row->id]) }}" method="PUT">
+<form action="{{ route('comics.update', ['comic'=>$row->id]) }}" method="POST">
+    @method('PUT')
     @csrf
     <div class="mb-3">
       <label class="form-label">Title</label>
