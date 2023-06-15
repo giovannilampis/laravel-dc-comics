@@ -34,9 +34,6 @@ Route::controller(ComicController::class)->group(function () {
 
     Route::put('/comics/{comic}/update', 'update')->name('comics.update');
 
-    Route::get('/comics/{comic}/edit', 'edit')->name('comics.edit');
-
-
-
+    Route::delete('/comics/{comic}/destroy', 'destroy')->name('comics.destroy');
 
 });
