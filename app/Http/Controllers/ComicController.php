@@ -14,7 +14,9 @@ class ComicController extends Controller
      */
     public function index()
     {
-        return response()->view('comics.index', []);
+        $rows = Comic::all();
+
+        return response()->view('comics.index', ['rows' => $rows]);
     }
 
     /**
@@ -41,7 +43,7 @@ class ComicController extends Controller
 
         $newComic = new Comic();
 
-        $newComic->fill();
+        $newComic->fill($form_data);
 
         $newComic->save();
 
