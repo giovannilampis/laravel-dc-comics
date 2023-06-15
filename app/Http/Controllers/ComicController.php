@@ -23,7 +23,7 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    { 
+    {
         return response()->view('comics.create', []);
     }
 
@@ -35,10 +35,17 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        // Comic::create($request);
+        // return response()->redirectTo('/comics');
+        $form_data = $request->all();
 
-        
-        Comic::create($request);
-        return response()->redirectTo('/comics');                   
+        $newComic = new Comic();
+
+        $newComic->fill();
+
+        $newComic->save();
+
+        return redirect()->route('comics.index');
     }
 
     /**
