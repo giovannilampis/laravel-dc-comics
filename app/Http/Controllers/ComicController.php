@@ -81,7 +81,7 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comic $comic)
+    public function edit(Request $request, Comic $comic)
     {
         $request->validate(
             [
