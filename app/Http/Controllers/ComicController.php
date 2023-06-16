@@ -56,7 +56,7 @@ class ComicController extends Controller
 
         $newComic->save();
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('success', 'Adesso hai un nuovo fumetto nella tua collezione');
     }
 
     /**
@@ -107,7 +107,7 @@ class ComicController extends Controller
             'title.unique' => "Non può essere scelto un titolo già assegnato ad un'altra rivista"
             ]
         );
-        
+
         $comic->update($request->all());
 
         return redirect()->route('comics.show', ['comic' => $comic->id]);
