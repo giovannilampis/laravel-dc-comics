@@ -17,6 +17,7 @@
                   <p>{{ $row->sale_date }}</p>
                   <h5 class="card-title">{{ $row->price }}</h5>
                   <a href="{{route('comics.show', ['comic' => $row->id])}}" class="btn btn-primary">SHOW</a>
+                  <a href="{{route('comics.edit', ['comic' => $row->id])}}" class="btn btn-warning">EDIT</a>
                   <form action="{{route('comics.destroy', ['comic' => $row->id])}}" method="POST">
                     @method('DELETE')
                     @csrf
