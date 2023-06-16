@@ -37,8 +37,10 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        // Comic::create($request);
-        // return response()->redirectTo('/comics');
+        $request->validate([
+            'title' => 'required'
+        ]);
+
         $form_data = $request->all();
 
         $newComic = new Comic();
