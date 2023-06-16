@@ -81,19 +81,8 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, Comic $comic)
+    public function edit(Comic $comic)
     {
-        $request->validate(
-            [
-            'title' => 'required|max:20|unique:comics'
-            ],
-            [
-            'title.required' => 'Il campo "Title" deve essere necessariamente riempito',
-            'title.max' => 'Bisogna scegliere un titolo composto da non più di 20 caratteri',
-            'title.unique' => "Non può essere scelto un titolo già assegnato ad un'altra rivista"
-            ]
-        );
-
         $row = $comic;
 
         return response()->view('comics.edit', ['row' => $row]);
@@ -108,6 +97,17 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $request->validate(
+            [
+            'title' => 'required|max:20|unique:comics'
+            ],
+            [
+            'title.required' => 'Il campo "Title" deve essere necessariamente riempito',
+            'title.max' => 'Bisogna scegliere un titolo composto da non più di 20 caratteri',
+            'title.unique' => "Non può essere scelto un titolo già assegnato ad un'altra rivista"
+            ]
+        );
+        
         $comic->update($request->all());
 
         return redirect()->route('comics.show', ['comic' => $comic->id]);
