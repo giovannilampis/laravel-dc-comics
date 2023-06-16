@@ -12,7 +12,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Description</label>
-            <input name="description" type="text" class="form-control" value="{{$row->description}}">
+            <textarea name="description" id="" style="width: 100%">{{$row->description}}</textarea>
         </div>
         <div class="mb-3">
             <label class="form-label">Thumb</label>

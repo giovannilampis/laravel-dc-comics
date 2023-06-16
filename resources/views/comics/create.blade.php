@@ -12,7 +12,8 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Description</label>
-            <input name="description" type="text" class="form-control">
+            <textarea name="description" id="" style="width: 100%"></textarea>
+            {{-- <input name="description" type="text" class="form-control"> --}}
         </div>
         <div class="mb-3">
             <label class="form-label">Thumb</label>
