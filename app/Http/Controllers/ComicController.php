@@ -39,10 +39,12 @@ class ComicController extends Controller
     {
         $request->validate(
             [
-            'title' => 'required'
+            'title' => 'required|max:20|unique:comics'
             ],
             [
-            'title.required' => 'Il campo "Title" deve essere necessariamente riempito'
+            'title.required' => 'Il campo "Title" deve essere necessariamente riempito',
+            'title.max' => 'Bisogna scegliere un titolo composto da non più di 20 caratteri',
+            'title.unique' => "Non può essere scelto un titolo già assegnato ad un'altra rivista"
             ]
     );
 
