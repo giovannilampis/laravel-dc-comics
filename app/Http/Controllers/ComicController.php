@@ -37,9 +37,14 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $request->validate(
+            [
             'title' => 'required'
-        ]);
+            ],
+            [
+            'title.required' => 'Il campo "Title" deve essere necessariamente riempito'
+            ]
+    );
 
         $form_data = $request->all();
 
